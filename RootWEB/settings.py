@@ -12,10 +12,14 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+# os path
+# os.path.absparh(__file__) : 코드가 실행중인 파일의 경로를 나타낸다.
+# os.path.dirname(<경로>) : 특정 경로의 상위폴더를 나타낸다.
+# os.path.join(<경로>,<폴더/파일명>) : 경로를 병합하여 새 경로 생성.
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -30,7 +34,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
-
+# 앱을 다 작성하게 됐으면 최종으로 setting에서 INSTALLED_APPS에 작성해줘야 한다.
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -53,6 +57,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'RootWEB.urls'
 
+# TEMPLATES에 DIRS의 location을 설정해줘야 한다.
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

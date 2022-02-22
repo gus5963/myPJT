@@ -23,4 +23,4 @@ urlpatterns = [
     path('index/', views.index),
     path('user/', include('userApp.urls')),
 ]
-
+# include를 사용하는 것은 따로 app을 만들었기 때문이다. 그래서 include() 괄호 안에는 urls로 가도록 한다. 그러면 urls내 있는 urlpatterns를 작동시킨다.
