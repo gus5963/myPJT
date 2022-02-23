@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if user.user_name == '관리자'%}
+    {{warning}}
+{% else %}
+    {{user.user_name}}
+{% endif %}
+</body>
+</html>

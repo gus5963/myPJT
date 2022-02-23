@@ -81,6 +81,7 @@ WSGI_APPLICATION = 'RootWEB.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 # 내장 db가 있음.
+# 내장인 sqlite와 연결을 시켰음.
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
