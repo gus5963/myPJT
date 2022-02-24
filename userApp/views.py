@@ -56,7 +56,7 @@ def login(request):
             # session을 심는 과정
             return render(request, 'user/ok.html', context)
         except Exception as e:
-            context['error'] = 'ERROR : invalid id and pwd'
+            context['error'] = str(e)
             return render(request, 'user/index.html', context)
         # if를 사용하여 로그인의 성공 여부를 작성해야 한다.
         # session에 넣으면 모든 페이지에서 사용할 수 있다.
