@@ -6,12 +6,16 @@
 </head>
 <body>
 {{error}}
+    <div align="center">
     <form action="../login/" method="post">
         {% csrf_token %}
         ID  : <input type="text" placeholder="ID" name = "id" required><br/>
+        <br/>
         PWD : <input type="password" placeholder="Password" name = "pwd" required><p/>
+        <p/>
         &nbsp;<input type="submit" value="login">
-        &nbsp;<a href="../signUp">가입</a>
+        &nbsp;&nbsp;<button><a href="../signUp">SignUp</a></button>
     </form>
+</div>
 </body>
 </html>

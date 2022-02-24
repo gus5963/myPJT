@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <form action="../bbsWrite/" method="POST">
+    {% csrf_token %}
+    <div>
+      <label>TITLE</label>
+      <input type="text" placeholder="제목을 입력하시오" name="title">
+    </div>
+    <div>
+      <label>WRITER</label>
+      <input type="text" placeholder="작성자를 입력하시오" name="writer">
+    </div>
+    <div>
+      <label>CONTENT</label>
+      <textarea name="content" placeholder="내용을 입력하세요"></textarea>
+    </div>
+    <button type="submit">Submit</button>
+
+
+  </form>
+</body>
+</html>

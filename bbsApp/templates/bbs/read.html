@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="hidden" name="id" id="bbsId" value="{{board.id}}">
+    <div>
+        <label>TITLE</label>
+        <input type="text" value="{{board.title}}" name="title" id="title">
+    </div>
+    <div>
+        <label>WRITER</label>
+        <input type="text" value="{{board.writer}}" name="writer" id="writer" readonly>
+    </div>
+    <div>
+        <label>ViewCNT</label>
+        <input type="text" value="{{board.viewcnt}}" name="viewcnt" readonly>
+    </div>
+    <div>
+        <label>CONTENT</label>
+        <textarea name="content" id="content">{{board.content}}</textarea>
+    </div>
+    <div>
+        <label>REGDATE</label>
+        <input type="text" value="{{board.regdate}}" name="regdate" readonly>
+    </div>
+    <p/>
+    <div>
+        <button type="button" id="deleteBtn">Delete</button>
+        <button type="button" id="updateBtn">Update</button>
+        <button type="button" id="listBtn">List</button>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#deleteBtn').click(function(){
+                // val()를 활용하기
+                bbsId= $('#bbsId').val()
+                location.href ='../bbsRemove?id='+bbsId
+            });
+            $('#updateBtn').click(function(){
+                bbsId= $('#bbsId').val()
+                bbsTitle= $('#title').val()
+                bbsContent= $('#content').val()
+                location.href='../bbsUpdate?id='+bbsId+'&title='+bbsTitle+'&content='+bbsContent
+            });
+            $('#listBtn').click(function(){
+                location.href = '../index';
+            });
+        })
+    </script>
+</body>
+</html>
