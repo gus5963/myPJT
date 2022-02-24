@@ -5,12 +5,16 @@
     <title>Title</title>
 </head>
 <body>
-    <div align="center">{{intro}}</div>
+    <div align="center">hello world!!</div>
     <hr/>
     <div align="right">
         <a href="../blog/index">블로그</a>
         <a href="../bbs/index">게시판</a>
-        <a href="../user/index">로그인</a>
+        {% if session_user_name %}
+            <a href="../user/index">{{session_user_name}}</a>
+        {%else%}
+            <a href="../user/index">Login</a>
+        {%endif%}
     </div>
 </body>
 </html>

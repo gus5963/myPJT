@@ -5,12 +5,16 @@
     <title>Title</title>
 </head>
 <body>
-{% if loginUser %}
-Success Login <font color="red">{{loginUser.user_name}}</font>
+{% if session_user_name %}
+Success Login <font color="red">{{session_user_name}}</font>
+<a href="../logout">log out</a>
 {%else%}
 데이터가 존제하지 않습니다...
 {% endif %}
 <hr/>
+
 <a href="../list?category=sport">전체 사용자 보기</a>
+<br/>
+<a href="../../">main</a>
 </body>
 </html>

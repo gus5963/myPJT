@@ -20,7 +20,8 @@ from RootWEB import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', views.index),
+    path('', views.index, name='main'),
     path('user/', include('userApp.urls')),
+    path('bbs/', include('bbsApp.urls')),
 ]
 # include를 사용하는 것은 따로 app을 만들었기 때문이다. 그래서 include() 괄호 안에는 urls로 가도록 한다. 그러면 urls내 있는 urlpatterns를 작동시킨다.
