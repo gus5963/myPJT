@@ -9,4 +9,5 @@ urlpatterns = [
     path('bbsRead/', views.bbsRead, name='bbsRead'),
     path('bbsRemove/', views.bbsRemove, name='bbsRemove'),
     path('bbsUpdate/', views.bbsUpdate, name='bbsUpdate'),
+    path('bbsSearch/', views.bbsSearch, name='bbsSearch')
 ]

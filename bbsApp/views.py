@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from .models import *
 
@@ -60,3 +61,31 @@ def bbsUpdate(request):
     board.content = content
     board.save()
     return redirect('bbsIndex')
+
+def bbsSearch(request):
+    print('✅ Get bbs Search 🚀🚀')
+    type = request.POST['type']
+    keyword = request.POST['keyword']
+    print('⛔️ request check', type, keyword)
+    # orm 작업 like pattern 검색, render 은 사용 금지
+    # script에서 사용할 수 있는 타입으로 작성해줘야 한다. 2가지 있음 dict / [dict]
+    # orm => filter를 사용하자. __ 앞 에는 컬럼의 이름을 적으면 된다.
+    # filter(__icontains) => %공지%
+    # filter(__startswith) => 공지%
+    # filter(__endswith) => %공지
+    # select * from table where title like ''
+    # select * from table where writer like ''
+    if type == 'title':
+        boards = WebBbs.objects.filter(title__icontains = keyword)
+    if type == 'writer':
+        boards = WebBbs.objects.filter(writer__startswith = keyword)
+    jsonAry = []
+    for board in boards:
+        jsonAry.append({
+            'id':board.id,
+            'title':board.title,
+            'writer':board.writer,
+            'regdate':board.regdate,
+            'viewcnt':board.viewcnt
+        })
+    return JsonResponse(jsonAry, safe=False)
