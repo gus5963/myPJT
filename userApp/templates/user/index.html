@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+        <link rel="stylesheet" href="https://unpkg.com/mvp.css">
 </head>
 <body>
 {{error}}
     <div align="center">
     <form action="../login/" method="post">
         {% csrf_token %}
-        ID  : <input type="text" placeholder="ID" name = "id" required><br/>
-        <br/>
-        PWD : <input type="password" placeholder="Password" name = "pwd" required><p/>
-        <p/>
-        &nbsp;<input type="submit" value="login">
-        &nbsp;&nbsp;<button><a href="../signUp">SignUp</a></button>
+        ID  : <input type="text" placeholder="ID" name = "id" required>
+        PWD : <input type="password" placeholder="Password" name = "pwd" required>
+        <input type="submit" value="login">
+        <a href="../signUp">SignUp</a>
     </form>
 </div>
 </body>

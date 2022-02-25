@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'userApp',
-    'bbsApp'
+    'bbsApp',
+    'staticApp',
 ]
 
 MIDDLEWARE = [
@@ -128,6 +129,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'staticApp', 'static')
+]
+# 각각의 app이 갖고있는 static을 연결시켜주는 것
+
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
+# 각각의 모든 app에 들어있는 static을 root가 관리한다는 것
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
