@@ -131,7 +131,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'staticApp', 'static')
+    os.path.join(BASE_DIR, 'staticApp', 'static'),
+    os.path.join(BASE_DIR, 'bbsApp', 'static')
 ]
 # 각각의 app이 갖고있는 static을 연결시켜주는 것
 

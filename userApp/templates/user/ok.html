@@ -3,19 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-        <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
 </head>
 <body>
+<div align="right"> <a href="../../">MAIN</a></div>
 {% if session_user_name %}
-Success Login <font color="red">{{session_user_name}}</font>
+<h1>Success Login <font color="red">{{session_user_name}}</font></h1>
 <a href="../logout">log out</a>
+<br/>
 {%else%}
 데이터가 존제하지 않습니다...
 {% endif %}
-<hr/>
-
 <a href="../list?category=sport">전체 사용자 보기</a>
-<br/>
-<a href="../../">MAIN</a>
 </body>
 </html>
