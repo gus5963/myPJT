@@ -3,6 +3,8 @@ def index(request):
     print('✅ Get Index 🚀🚀')
     # session.get()
     request.session.get('user_name')
+    user=request.user
+    print('⛔️ request check :',type(user), user, user.is_authenticated, user.is_superuser,user.is_staff)
     context = {
         'session_user_name': request.session.get('user_name'),
         'session_user_id': request.session.get('user_id')
